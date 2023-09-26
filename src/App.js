@@ -5,10 +5,18 @@ import Navbar from './component/navbar';
 
 function App() {
   return (
+<<<<<<< HEAD
 
     <div className="App">
       <Home />
     </div>
+=======
+   <><h1>welcome to the college !</h1></
+    <div className="App">
+      <Home />
+    </div>
+   <><h1>hello</h1></>
+>>>>>>> 5ce9ddcbc0be46bca727bbfbfd53cbc653522527
 
   );
 }
