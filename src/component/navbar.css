@@ -1,131 +1,30 @@
-/* Importing a custom font */
+/* Import custom fonts and define variables here */
 @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&display=swap");
-/* Resetting default styles and defining base font */
+
+/* Reset default styles and define base font */
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-    font-family: "Yeseva One", sans-serif;
-}
-
-/* Custom color variables */
-:root {
-	--mainColor: #1F75FE;
-	--mainColorLight: #00FFFF;
-	--secondaryColor: #db2b39;
-	--textColor: #eee;
-}
-
-/* Navigation bar styling */
-.navbar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	height: 80px;
-	padding: 0 2rem;
-    margin: 4px;
-	background-color: var(--secondaryColor);
-	color: var(--textColor);
-}
-
-/* Navigation links */
-nav a {
-	margin: 0 1rem;
-	color: var(--textColor);
-	text-decoration: none;
-    font-family: "Libre Caslon Text", serif;
-}
-
-/* Hover effect on navigation links */
-nav a:hover {
-	color: var(--secondaryColor);
-}
-
-/* Navigation button for mobile */
-.navbar .nav-btn {
-	padding: 5px;
-	cursor: pointer;
-	background: transparent;
-	border: none;
-	outline: none;
-	color: var(--textColor);
-	visibility: hidden;
-	opacity: 0;
-	font-size: 1.8rem;
-}
-
-/* Styling for header and nav elements */
-header div,
-nav {
-	display: flex;
-	align-items: center;
-}
-
-/* Responsive design for screens up to 1024px */
-@media only screen and (max-width: 1024px) {
-	/* Make the navigation button visible */
-	.navbar .nav-btn {
-		visibility: visible;
-		opacity: 1;
-	}
-
-	/* Create a full-screen mobile navigation menu */
-	nav {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-		background-color: var(--mainColor);
-		transition: 1s;
-		transform: translateY(-100vh);
-	}
-
-	/* Reveal the mobile navigation menu */
-	.navbar .responsive_nav {
-		transform: none;
-	}
-
-	/* Close button for the mobile menu */
-	nav .nav-close-btn {
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
-	}
-
-	/* Increase font size for mobile navigation links */
-	nav a {
-		font-size: 1.7rem;
-	}
-}
-/* Importing a custom font */
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
-
-/* Resetting default styles and defining base font */
-* {
-	padding: 0;
+    padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Titillium Web", sans-serif;
 }
 
-/* Custom color variables */
+body {
+
+}
+
+/* Define your color variables here */
 :root {
-	--mainColor: #29335c;
-	--mainColorLight: #5767aa;
-	--secondaryColor: #db2b39;
-	--textColor: #eee;
+    --mainColor: #29335c;
+    --mainColorLight: #5767aa;
+    --secondaryColor: #db2b39;
+    --textColor: #eee;
 }
 
 /* Navigation bar styling */
 .navbar {
-	display: flex;
+    display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 80px;
@@ -134,21 +33,29 @@ nav {
 	color: var(--textColor);
 }
 
-/* Navigation links */
-nav a {
-	margin: 0 1rem;
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin-top: 39px;
+    padding: 0;
+    justify-content: flex-end; /* Align list items to the right */
+}
+
+.navbar a {
+    margin: 0 1rem;
 	color: var(--textColor);
 	text-decoration: none;
 }
 
 /* Hover effect on navigation links */
-nav a:hover {
-	color: var(--secondaryColor);
+.navbar a:hover {
+    color: var(--secondaryColor);
 }
 
 /* Navigation button for mobile */
 .navbar .nav-btn {
-	padding: 5px;
+    padding: 5px;
 	cursor: pointer;
 	background: transparent;
 	border: none;
@@ -161,23 +68,23 @@ nav a:hover {
 
 /* Styling for header and nav elements */
 header div,
-nav {
-	display: flex;
-	align-items: center;
+.navbar {
+    display: flex;
+    align-items: center;
 }
 
 /* Responsive design for screens up to 1024px */
 @media only screen and (max-width: 1024px) {
-	/* Make the navigation button visible */
-	.navbar .nav-btn {
-		visibility: visible;
-		opacity: 1;
-	}
+    /* Make the navigation button visible */
+    .navbar .nav-btn {
+        visibility: visible;
+        opacity: 1;
+    }
 
-	/* Create a full-screen mobile navigation menu */
-	nav {
-		position: fixed;
-		top: 0;
+    /* Create a full-screen mobile navigation menu */
+    .navbar nav {
+        position: fixed;
+		top: -100vh;
 		left: 0;
 		height: 100%;
 		width: 100%;
@@ -188,23 +95,22 @@ nav {
 		gap: 1.5rem;
 		background-color: var(--mainColor);
 		transition: 1s;
-		transform: translateY(-100vh);
-	}
+    }
 
-	/* Reveal the mobile navigation menu */
-	.navbar .responsive_nav {
-		transform: none;
-	}
+    /* Reveal the mobile navigation menu */
+    .navbar.responsive .nav-btn {
+        transform: translateY(100vh);
+    }
 
-	/* Close button for the mobile menu */
-	nav .nav-close-btn {
-		position: absolute;
+    /* Close button for the mobile menu */
+    .navbar nav .nav-close-btn {
+        position: absolute;
 		top: 2rem;
 		right: 2rem;
-	}
+    }
 
-	/* Increase font size for mobile navigation links */
-	nav a {
-		font-size: 1.7rem;
-	}
+    /* Increase font size for mobile navigation links */
+    .navbar nav a {
+        font-size: 1.5rem;
+    }
 }
